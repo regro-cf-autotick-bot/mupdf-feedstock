@@ -21,7 +21,7 @@ source:
         - python-ext-so.patch
 
 build:
-  number: 1
+  number: 2
   dynamic_linking:
     missing_dso_allowlist:
       - if: osx
@@ -41,7 +41,10 @@ requirements:
         - ninja
     - make
     - pkg-config
-    - swig
+    # SWIG 4.5.0 dropped the Python 2 -> 3 compatibility shims that mupdf's
+    # generated bindings rely on, causing 'PyString_FromString' undeclared
+    # errors. Pin below 4.5 until upstream mupdf supports SWIG 4.5.
+    - swig <4.5
     - python-clang <22
   host:
     - brotli
