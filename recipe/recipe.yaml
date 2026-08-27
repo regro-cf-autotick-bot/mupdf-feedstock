@@ -46,10 +46,10 @@ requirements:
     # errors. Pin below 4.5 until upstream mupdf supports SWIG 4.5.
     - swig <4.5
     - python-clang <22
-    - pipcl
   host:
     - brotli
     - python
+    - pipcl
     - if: win
       then:
         - pip
