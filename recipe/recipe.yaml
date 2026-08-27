@@ -67,6 +67,7 @@ requirements:
     - zlib
     - curl
     - harfbuzz
+    - pipcl
     - if: linux or win
       then: freeglut
     - if: linux
